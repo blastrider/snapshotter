@@ -192,4 +192,4 @@ MIT OR Apache-2.0 (dual). Voir `Cargo.toml`.
 
 1. Installez Rust (`rustup`), puis `cargo build --release` ou `cargo install --path .`.
 2. Configurez un `SnapshotConfig` (ou utilisez le binaire) avec `prefix` et `max_lines`.
-3. Exécutez : le projet est découpé en `*_partN.txt` + `*_summary.txt`. Utilisez `dry_run` pour tester.
+3. Exécutez : le projet est découpé en `*_partN.txt` + `*_summary.txt`. Utilisez `dry_run`.
