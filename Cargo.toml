@@ -1,0 +1,27 @@
+[package]
+name = "snapshotter"
+version = "0.1.0"
+edition = "2021"
+description = "Crée des snapshots découpés d'un projet Rust (similaire à snapshot_split.sh)."
+license = "MIT OR Apache-2.0"
+repository = ""
+readme = "README.md"
+keywords = ["snapshot", "rust", "cli"]
+categories = ["command-line-utilities"]
+
+# MSRV documented
+[package.metadata]
+msrv = "1.90.0"
+
+[dependencies]
+anyhow = "1.0"
+thiserror = "1.0"
+
+[features]
+# optional features could go here (serde, etc.) — none for now
+
+[dev-dependencies]
+tempfile = "3.6"
+
+[workspace.metadata]
+# nothing
