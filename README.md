@@ -1,11 +1,11 @@
 # snapshotter
 
-Petit outil (lib + binaire) pour **créer des snapshots découpés** d’un dépôt Rust.
+Petit outil (lib + binaire) pour **créer des snapshots découpés** d’un dépôt Rust. (utiles quand on veut copier coller dans chatgpt)
 Il produit des fichiers “part” contenant des blocs « header + contenu », limités en nombre de lignes pour faciliter la revue ou l’archivage.
 
 ---
 
-## But (en une phrase)
+## But
 
 Prendre le code important d’un projet Rust et le couper en morceaux lisibles (fichiers `*_partN.txt`) sans charger tout en mémoire.
 
@@ -13,7 +13,7 @@ Prendre le code important d’un projet Rust et le couper en morceaux lisibles (
 
 ## Public visé
 
-Débutants Linux / développeurs débutants Rust — instructions pas à pas et commandes concrètes.
+Débutants Linux / développeurs débutants Rust.
 
 ---
 
