@@ -28,13 +28,25 @@ fn main() -> Result<()> {
 
     let (dest_dir, prefix, max_lines) = match positionals.len() {
         0 => (PathBuf::from("."), "snapshot".to_string(), 1500usize),
-        1 => (PathBuf::from(&positionals[0]), "snapshot".to_string(), 1500usize),
-        2 => (PathBuf::from(&positionals[0]), positionals[1].clone(), 1500usize),
+        1 => (
+            PathBuf::from(&positionals[0]),
+            "snapshot".to_string(),
+            1500usize,
+        ),
+        2 => (
+            PathBuf::from(&positionals[0]),
+            positionals[1].clone(),
+            1500usize,
+        ),
         3 => {
             let max_lines: usize = positionals[2]
                 .parse()
                 .with_context(|| format!("invalid max_lines: {}", positionals[2]))?;
-            (PathBuf::from(&positionals[0]), positionals[1].clone(), max_lines)
+            (
+                PathBuf::from(&positionals[0]),
+                positionals[1].clone(),
+                max_lines,
+            )
         }
         _ => print_usage_and_exit(),
     };

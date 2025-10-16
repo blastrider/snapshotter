@@ -189,7 +189,11 @@ impl Snapshotter {
                         .unwrap_or_default()
                 )?;
             }
-            writeln!(sum_file, "TOTAL: {} fichiers, {} lignes", total_files, total_lines)?;
+            writeln!(
+                sum_file,
+                "TOTAL: {} fichiers, {} lignes",
+                total_files, total_lines
+            )?;
             sum_file.flush()?;
         }
 
