@@ -54,12 +54,14 @@ fn push_files_recursive(dir: &Path, out: &mut Vec<PathBuf>) -> io::Result<()> {
     Ok(())
 }
 
-/// Ajoute uniquement les fichiers ayant l'extension donnée (non-recursif).
+/// Ajoute récursivement les fichiers ayant l'extension donnée.
 fn push_files_with_ext(dir: &Path, ext: &str, out: &mut Vec<PathBuf>) -> io::Result<()> {
     for entry in fs::read_dir(dir)? {
         let e = entry?;
         let p = e.path();
-        if p.is_file() && p.extension().and_then(OsStr::to_str) == Some(ext) {
+        if p.is_dir() {
+            push_files_with_ext(&p, ext, out)?;
+        } else if p.is_file() && p.extension().and_then(OsStr::to_str) == Some(ext) {
             out.push(p);
         }
     }
